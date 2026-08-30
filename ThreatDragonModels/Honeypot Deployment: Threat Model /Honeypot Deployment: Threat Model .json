@@ -101,7 +101,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Attcker Router "
+                "text": "Attacker Router "
               },
               "body": {
                 "stroke": "#333333",
@@ -197,7 +197,7 @@
             "zIndex": 2,
             "data": {
               "type": "tm.Process",
-              "name": "Attcker Router ",
+              "name": "Attacker Router ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -224,8 +224,8 @@
                 "text": "Org Router "
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -322,12 +322,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "8a1a4cfc-d0eb-47f0-a327-c65741a12db1",
+                  "title": "No MFA org Router SSH ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The organisation router's management SSH has no MFA, allowing credential-based compromise of routing configuration.",
+                  "mitigation": "Enforce MFA on router management; use key-based auth over passwords",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -344,8 +366,8 @@
                 "text": "L2 Switch "
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -442,12 +464,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "61083edf-d581-4f7d-a59d-4645452b5387",
+                  "title": "No MFA on L2 Switch Management SSH",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The L2 switch's management SSH interface lacks MFA, risking unauthorized configuration changes if credentials are compromised.",
+                  "mitigation": "Enforce MFA on switch management access; restrict to IT or VLAN only",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -464,8 +508,8 @@
                 "text": "Honeypot System "
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -562,12 +606,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "6369cce3-014d-4acb-a43d-080548d23ff6",
+                  "title": "Honeypot Fingerprinting ",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Undiscovered weaknesses (VM artifacts, inconsistent service banners, unnatural traffic patterns) could allow an attacker to determine the system is a honeypot rather than a real production host.",
+                  "mitigation": "Harden honeypot to reduce detectable artifacts; monitor for reconnaissance behaviour indicating fingerprinting attempts",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -584,8 +650,8 @@
                 "text": "Monitoring "
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -682,12 +748,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "bc610b10-fa19-404e-9857-55ee42e998be",
+                  "title": "Fingerprinting-Driven False Telemetry / Mitigation Gap",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Once the attacker recognises the honeypot, they may feed deliberately false or misleading behaviour into it. The organisation's resulting mitigations (based on this poisoned data) may leave a predictable, known gap the attacker can later exploit.",
+                  "mitigation": "Cross-validate honeypot findings against independent detection sources (e.g. compare Suricata vs. Zeek results) before acting on them; treat honeypot data as a signal, not sole justification, for mitigation decisions",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                },
+                {
+                  "id": "4b903910-6ce0-48c8-bb67-e45f441bad7c",
+                  "title": "Org Router Firewall misconfiguration ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Misconfigured firewall rules on the Org Router could allow attacker traffic broader access into the internal network than intended, undermining the first layer of perimeter defense.",
+                  "mitigation": "Regularly audit firewall rulesets; apply default-deny with explicit allow rules only for required traffic",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -824,8 +925,8 @@
                 "text": "L3 Switch"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -922,12 +1023,60 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "64038861-6135-41c1-9279-22cb4f23e21e",
+                  "title": "No MFA on L3 Switch Management SSH ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "The L3 switch's management SSH interface has no MFA, allowing an attacker who obtains credentials to log in and alter routing/ACL configuration.",
+                  "mitigation": "Enforce MFA on switch management access; restrict management interface to an out-of-band network",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "ba22497d-2ef8-449d-82a8-6b2d151f811b",
+                  "title": "Routig Table Exposure via L3 Switch ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Exploiting the L3 switch's management interface could allow an attacker to view routing tables, revealing the existence and IP addressing of the Production VLAN.",
+                  "mitigation": "Restrict management interface access; disable unnecessary services that could leak routing data",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                },
+                {
+                  "id": "bc5cdc6b-886d-4acb-9dc4-6875c0ed2ba2",
+                  "title": "ACL and Firewall Misconfiguration Enabling Boundary Crossing ",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Improperly configured ACLs and firewalls at the L3 switch boundary could allow an attacker with routing knowledge to cross from the Honeypot zone into the Protected Asset Zone",
+                  "mitigation": "Regularly audit and test ACL rules; apply least-privilege segmentation between VLANs",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 2
+              }
             }
           },
           {
@@ -944,11 +1093,13 @@
                 "text": "Honeypot Logs"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1045,13 +1196,40 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "00e81cd7-2473-4946-a0a3-7f7760aed190",
+                  "title": "Honeypot Log tampering ",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "If an attacker pivots into the Monitoring VLAN (via a boundary failure), they could alter or delete stored logs to erase evidence of their activity, directly undermining the research dataset.",
+                  "mitigation": "Write-once/append-only log storage; separate log storage host from analysis host; regular integrity hashing of log files",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1453,8 +1631,8 @@
                 "text": "Production "
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1551,12 +1729,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "0234fa94-a020-4c50-bde7-3fdf2ed18a46",
+                  "title": "Production Network Compromise ",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Elevation of privilege",
+                  "description": "If the attacker successfully crosses the boundary, they can access sensitive company data, escalate privileges, and potentially disrupt or cripple production systems.",
+                  "mitigation": "Defense-in-depth: network segmentation, monitoring alerts on cross-VLAN traffic, incident response plan for breach containment",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -1625,8 +1825,8 @@
                 "text": "Attacker "
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1723,9 +1923,23 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "5143f1a8-2800-47d3-a1a6-7742f4c28526",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 2,
+                  "score": ""
+                }
+              ]
             }
           }
         ]
@@ -1733,6 +1947,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
-    "threatTop": 1
+    "threatTop": 12
   }
 }
