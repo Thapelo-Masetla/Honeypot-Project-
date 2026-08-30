@@ -56,8 +56,8 @@
           },
           {
             "position": {
-              "x": -420,
-              "y": 255
+              "x": -410,
+              "y": 237
             },
             "size": {
               "width": 80,
@@ -1065,8 +1065,8 @@
             },
             "vertices": [
               {
-                "x": -260,
-                "y": 320
+                "x": -230,
+                "y": 360
               }
             ]
           },
@@ -1402,126 +1402,6 @@
             }
           },
           {
-            "position": {
-              "x": -680,
-              "y": 280
-            },
-            "size": {
-              "width": 100,
-              "height": 80
-            },
-            "attrs": {
-              "text": {
-                "text": "Attcker "
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "process",
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "7a840626-1ebc-4bc2-a008-c187bffde619"
-                },
-                {
-                  "group": "right",
-                  "id": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
-                },
-                {
-                  "group": "bottom",
-                  "id": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
-                },
-                {
-                  "group": "left",
-                  "id": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-                }
-              ]
-            },
-            "id": "0aeaf409-8995-49ab-a60d-0c63829a431b",
-            "zIndex": 11,
-            "data": {
-              "type": "tm.Process",
-              "name": "Attcker ",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": []
-            }
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1537,7 +1417,7 @@
             },
             "width": 200,
             "height": 100,
-            "zIndex": 12,
+            "zIndex": 10,
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
@@ -1557,10 +1437,10 @@
             "labels": [
               "Data Flow"
             ],
-            "id": "8ddc4486-41e4-4e46-8177-66c704d34a04",
+            "id": "84950a0d-56c5-47fd-b102-465c3143e187",
             "source": {
-              "cell": "0aeaf409-8995-49ab-a60d-0c63829a431b",
-              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
+              "x": -573,
+              "y": 330
             },
             "target": {
               "cell": "fb2f52ca-a661-48f1-ab17-2d953c5eeb2b",
@@ -1684,6 +1564,175 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 15,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "f008f8a7-99e7-4be7-b218-8515e40db675",
+            "source": {
+              "x": -640,
+              "y": 230
+            },
+            "target": {
+              "x": -410,
+              "y": 300
+            },
+            "vertices": [
+              {
+                "x": -490,
+                "y": 250
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": -716,
+              "y": 270
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Attacker "
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "2df3408b-a599-4b74-ad2b-d9434abde402"
+                },
+                {
+                  "group": "right",
+                  "id": "7509e8a6-e253-4e5a-b27b-ff32dd6301bc"
+                },
+                {
+                  "group": "bottom",
+                  "id": "27080214-3f01-4fb2-998d-46f43b4cff21"
+                },
+                {
+                  "group": "left",
+                  "id": "af066153-594e-40fb-b410-f7e226e47a89"
+                }
+              ]
+            },
+            "id": "d0823085-c38d-47b5-adca-f2b5dfe44401",
+            "zIndex": 16,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Attacker ",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
               "threats": []
             }
           }
