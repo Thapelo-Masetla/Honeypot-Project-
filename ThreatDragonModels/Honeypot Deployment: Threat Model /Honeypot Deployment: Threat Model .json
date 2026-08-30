@@ -21,16 +21,16 @@
         "cells": [
           {
             "position": {
-              "x": -130,
-              "y": 170
+              "x": -190,
+              "y": 112
             },
             "size": {
               "width": 950,
-              "height": 280
+              "height": 340
             },
             "attrs": {
               "label": {
-                "text": "Trust Boundary"
+                "text": "Organization Trusted Network "
               }
             },
             "visible": true,
@@ -39,7 +39,43 @@
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
-              "name": "Trust Boundary",
+              "name": "Organization Trusted Network ",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "5df304e2-c80a-44be-b211-5ef9352a5247",
+                "189270ca-1af8-43cb-a133-6089b4dc8281"
+              ],
+              "containedElements": [
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
+                "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
+                "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
+                "89e1261d-95cc-4dbe-b184-84ce9faa94a6"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": -51.000000000000426,
+              "y": 175
+            },
+            "size": {
+              "width": 540,
+              "height": 160
+            },
+            "attrs": {
+              "label": {
+                "text": "Protected Asset Zone "
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Protected Asset Zone ",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
@@ -57,15 +93,15 @@
           {
             "position": {
               "x": -410,
-              "y": 237
+              "y": 242
             },
             "size": {
-              "width": 80,
-              "height": 90
+              "width": 90,
+              "height": 100
             },
             "attrs": {
               "text": {
-                "text": "Router "
+                "text": "Attcker Router "
               },
               "body": {
                 "stroke": "#333333",
@@ -161,7 +197,7 @@
             "zIndex": 2,
             "data": {
               "type": "tm.Process",
-              "name": "Router ",
+              "name": "Attcker Router ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -176,16 +212,16 @@
           },
           {
             "position": {
-              "x": -190,
-              "y": 260
+              "x": -260,
+              "y": 232
             },
             "size": {
-              "width": 80,
-              "height": 80
+              "width": 110,
+              "height": 100
             },
             "attrs": {
               "text": {
-                "text": "Router "
+                "text": "Org Router "
               },
               "body": {
                 "stroke": "#333333",
@@ -281,7 +317,7 @@
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
-              "name": "Router ",
+              "name": "Org Router ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1149,7 +1185,8 @@
               "protocol": "",
               "threats": [],
               "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5"
+                "715f033e-ae63-49b2-a08c-d784660ba9d5",
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
               ]
             },
             "labels": [
@@ -1386,7 +1423,8 @@
               "protocol": "",
               "threats": [],
               "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5"
+                "715f033e-ae63-49b2-a08c-d784660ba9d5",
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
               ]
             },
             "labels": [
@@ -1399,52 +1437,6 @@
             "target": {
               "cell": "89e1261d-95cc-4dbe-b184-84ce9faa94a6",
               "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "84950a0d-56c5-47fd-b102-465c3143e187",
-            "source": {
-              "x": -573,
-              "y": 330
-            },
-            "target": {
-              "cell": "fb2f52ca-a661-48f1-ab17-2d953c5eeb2b",
-              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
             }
           },
           {
@@ -1621,8 +1613,8 @@
           },
           {
             "position": {
-              "x": -716,
-              "y": 270
+              "x": -760,
+              "y": 210
             },
             "size": {
               "width": 112.5,
