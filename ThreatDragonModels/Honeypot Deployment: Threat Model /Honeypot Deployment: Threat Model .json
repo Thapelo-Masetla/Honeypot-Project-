@@ -1,0 +1,28 @@
+{
+  "version": "2.6.2",
+  "release_version": "",
+  "released_at": "",
+  "summary": {
+    "title": "Honeypot Deployment: Threat Model ",
+    "owner": "Thapelo Masetla ",
+    "description": "This threat model covers a network-based honeypot deployed to detect and analyze unauthorized access attempts. The primary concern in scope is containment: if an attacker who compromises the honeypot is able to move laterally into other parts of the network, this could expose production systems, internal credentials, or sensitive data, potentially leading to broader compromise of the organization's infrastructure. The model evaluates the honeypot's network segmentation, monitoring, and isolation controls to assess how well it prevents this kind of pivot.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "New STRIDE diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": []
+      }
+    ],
+    "diagramTop": 2,
+    "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
+    "threatTop": 0
+  }
+}
