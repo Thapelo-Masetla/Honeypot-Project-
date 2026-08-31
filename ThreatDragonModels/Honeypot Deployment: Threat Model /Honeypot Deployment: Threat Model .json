@@ -44,14 +44,11 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "05ee6ed2-6952-43ba-8bba-5498a4ad849f",
                 "356eabd0-6b61-4bd9-b533-e9510cb4e730",
-                "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
                 "017beb04-7ceb-4c5d-ba0b-d77564ac4f24"
               ],
               "containedElements": [
                 "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
-                "38baa0b7-4143-4f64-acbe-1f809a3b614e",
                 "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
                 "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
                 "89e1261d-95cc-4dbe-b184-84ce9faa94a6"
@@ -215,8 +212,8 @@
           },
           {
             "position": {
-              "x": -260,
-              "y": 232
+              "x": -310,
+              "y": 190
             },
             "size": {
               "width": 110,
@@ -1294,9 +1291,7 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5"
-              ]
+              "trustBoundaryIds": []
             },
             "labels": [
               "Data Flow"
@@ -1749,9 +1744,7 @@
                   "score": ""
                 }
               ],
-              "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5"
-              ],
+              "trustBoundaryIds": [],
               "threatFrequency": {
                 "tampering": 3,
                 "informationDisclosure": 2,
