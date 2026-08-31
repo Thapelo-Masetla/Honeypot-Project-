@@ -782,11 +782,11 @@
               "threats": [
                 {
                   "id": "bc610b10-fa19-404e-9857-55ee42e998be",
-                  "title": "Fingerprinting-Driven False Telemetry / Mitigation Gap",
+                  "title": "Fingerprinting-Driven False Telemetry ",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Once the attacker recognises the honeypot, they may feed deliberately false or misleading behaviour into it. The organisation's resulting mitigations (based on this poisoned data) may leave a predictable, known gap the attacker can later exploit.",
+                  "description": "After fingerprinting the honeypot, an attacker can deliberately perform misleading actions that get logged as legitimate attacker behaviour; the organisation, working from this poisoned data, may design mitigations around a flawed picture of the threat, and because the attacker is aware of what mitigation was applied, they can exploit the resulting predictable gap later, damaging both the research's data integrity and the organisation's actual defensive posture.",
                   "mitigation": "Cross-validate honeypot findings against independent detection sources (e.g. compare Suricata vs. Zeek results) before acting on them; treat honeypot data as a signal, not sole justification, for mitigation decisions",
                   "modelType": "STRIDE",
                   "new": false,
@@ -796,7 +796,7 @@
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 1,
+                "tampering": 2,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
@@ -928,7 +928,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Attacker cripples the Decoy PC for disruption purposes, so that honeypot-based CTI is put at a standstill ",
+                  "description": "An attacker who has pivoted from the honeypot toward the Decoy PC may flood or crash it simply for disruption rather than strategic gain, which removes the ability to observe and evidence lateral movement, weakening the research's core claim that a pivot between systems is possible.",
                   "mitigation": "Monitor Decoy PC availability and treat unexpected downtime as evidence of an attacker attempting to disrupt lateral-movement detection",
                   "modelType": "STRIDE",
                   "new": false,
@@ -941,7 +941,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 2,
+                "denialOfService": 3,
                 "elevationOfPrivilege": 0
               }
             }
@@ -1070,7 +1070,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "The L3 switch's management SSH interface has no MFA, allowing an attacker who obtains credentials to log in and alter routing/ACL configuration.",
+                  "description": "An attacker who has obtained switch credentials, whether externally or after pivoting from another compromised device, can log into the L3 Switch's SSH management interface without a second factor and alter routing or ACL configuration, compromising the very device responsible for enforcing segmentation between the Honeypot VLAN and the organisation's Protected Asset Zone.",
                   "mitigation": "Enforce MFA on switch management access; restrict management interface to an out-of-band network",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1083,7 +1083,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Exploiting the L3 switch's management interface could allow an attacker to view routing tables, revealing the existence and IP addressing of the Production VLAN.",
+                  "description": "Having compromised management access to the L3 Switch, an attacker can read its routing tables and discover that a Production VLAN exists along with its IP addressing, giving them the reconnaissance information needed to deliberately target the production system",
                   "mitigation": "Restrict management interface access; disable unnecessary services that could leak routing data",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1094,9 +1094,9 @@
                   "id": "bc5cdc6b-886d-4acb-9dc4-6875c0ed2ba2",
                   "title": "ACL and Firewall Misconfiguration Enabling Boundary Crossing ",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "Critical",
                   "type": "Elevation of privilege",
-                  "description": "Improperly configured ACLs and firewalls at the L3 switch boundary could allow an attacker with routing knowledge to cross from the Honeypot zone into the Protected Asset Zone",
+                  "description": "Armed with the routing knowledge gained from exposing the L3 Switch's tables, an attacker can send traffic across a misconfigured ACL at the boundary between the Honeypot VLAN and the Protected Asset Zone, crossing undetected into the organisation's trusted network and defeating the core segmentation control the entire containment design relies on",
                   "mitigation": "Regularly audit and test ACL rules; apply least-privilege segmentation between VLANs",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1105,12 +1105,12 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 2
+                "elevationOfPrivilege": 3
               }
             }
           },
