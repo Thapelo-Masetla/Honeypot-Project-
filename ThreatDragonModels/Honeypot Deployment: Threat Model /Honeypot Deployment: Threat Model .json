@@ -645,7 +645,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Attacker cripples Honeypot system after discovering they are in a honeypot, so they try to cripple the system so that parts of CTI are brought to a standstill",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Monitor honeypot availability and alert on unexpected service interruption, since the outage itself is a detection signal",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 20,
@@ -657,7 +657,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 1,
-                "denialOfService": 2,
+                "denialOfService": 3,
                 "elevationOfPrivilege": 0
               }
             }
@@ -929,7 +929,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Attacker cripples the Decoy PC for disruption purposes, so that honeypot-based CTI is put at a standstill ",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Monitor Decoy PC availability and treat unexpected downtime as evidence of an attacker attempting to disrupt lateral-movement detection",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 19,
@@ -941,7 +941,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 1,
+                "denialOfService": 2,
                 "elevationOfPrivilege": 0
               }
             }
@@ -1079,7 +1079,7 @@
                 },
                 {
                   "id": "ba22497d-2ef8-449d-82a8-6b2d151f811b",
-                  "title": "Routig Table Exposure via L3 Switch ",
+                  "title": "Routing Table Exposure via L3 Switch ",
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
@@ -1108,7 +1108,7 @@
                 "spoofing": 1,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 2
               }
