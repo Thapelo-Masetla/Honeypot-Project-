@@ -35,8 +35,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "715f033e-ae63-49b2-a08c-d784660ba9d5",
             "zIndex": -1,
+            "id": "715f033e-ae63-49b2-a08c-d784660ba9d5",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Organization Trusted Network ",
@@ -71,8 +71,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
             "zIndex": -1,
+            "id": "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Protected Asset Zone ",
@@ -111,6 +111,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -194,7 +195,6 @@
               ]
             },
             "id": "fb2f52ca-a661-48f1-ab17-2d953c5eeb2b",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Attacker Router ",
@@ -231,6 +231,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "ports": {
               "groups": {
                 "top": {
@@ -314,7 +315,6 @@
               ]
             },
             "id": "38baa0b7-4143-4f64-acbe-1f809a3b614e",
-            "zIndex": 3,
             "data": {
               "type": "tm.Process",
               "name": "Org Router ",
@@ -340,6 +340,19 @@
                   "new": false,
                   "number": 3,
                   "score": ""
+                },
+                {
+                  "id": "f8670101-4743-4ab4-bf90-8fc7dbff5308",
+                  "title": "Org Router Firewall Misconfiguration ",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Elevation of privilege",
+                  "description": "Misconfigured firewall rules on the Org Router could allow attacker traffic broader access into the internal network than intended, undermining the first layer of perimeter defense.",
+                  "mitigation": "Regularly audit firewall rulesets; apply default-deny with explicit allow rules only for required traffic",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -348,7 +361,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 3
               }
             }
           },
@@ -373,6 +386,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 5,
             "ports": {
               "groups": {
                 "top": {
@@ -456,7 +470,6 @@
               ]
             },
             "id": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-            "zIndex": 5,
             "data": {
               "type": "tm.Process",
               "name": "L2 Switch ",
@@ -515,6 +528,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 6,
             "ports": {
               "groups": {
                 "top": {
@@ -598,7 +612,6 @@
               ]
             },
             "id": "61dd091f-a1a7-4d18-8088-63185fc89aa5",
-            "zIndex": 6,
             "data": {
               "type": "tm.Process",
               "name": "Honeypot System ",
@@ -657,6 +670,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 7,
             "ports": {
               "groups": {
                 "top": {
@@ -740,7 +754,6 @@
               ]
             },
             "id": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-            "zIndex": 7,
             "data": {
               "type": "tm.Process",
               "name": "Monitoring ",
@@ -766,19 +779,6 @@
                   "new": false,
                   "number": 10,
                   "score": ""
-                },
-                {
-                  "id": "4b903910-6ce0-48c8-bb67-e45f441bad7c",
-                  "title": "Org Router Firewall misconfiguration ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Elevation of privilege",
-                  "description": "Misconfigured firewall rules on the Org Router could allow attacker traffic broader access into the internal network than intended, undermining the first layer of perimeter defense.",
-                  "mitigation": "Regularly audit firewall rulesets; apply default-deny with explicit allow rules only for required traffic",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 11,
-                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -787,7 +787,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 1
+                "elevationOfPrivilege": 0
               }
             }
           },
@@ -812,6 +812,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 8,
             "ports": {
               "groups": {
                 "top": {
@@ -895,7 +896,6 @@
               ]
             },
             "id": "2e84ba98-65fd-4224-a3b8-91c0584c50db",
-            "zIndex": 8,
             "data": {
               "type": "tm.Process",
               "name": "Decoy PC",
@@ -932,6 +932,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 9,
             "ports": {
               "groups": {
                 "top": {
@@ -1015,7 +1016,6 @@
               ]
             },
             "id": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
-            "zIndex": 9,
             "data": {
               "type": "tm.Process",
               "name": "L3 Switch",
@@ -1105,6 +1105,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 10,
             "ports": {
               "groups": {
                 "top": {
@@ -1188,7 +1189,6 @@
               ]
             },
             "id": "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
-            "zIndex": 10,
             "data": {
               "type": "tm.Store",
               "name": "Honeypot Logs",
@@ -1223,13 +1223,6 @@
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1638,6 +1631,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -1721,7 +1715,6 @@
               ]
             },
             "id": "89e1261d-95cc-4dbe-b184-84ce9faa94a6",
-            "zIndex": 13,
             "data": {
               "type": "tm.Process",
               "name": "Production ",
@@ -1825,13 +1818,14 @@
                 "text": "Attacker "
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 16,
             "ports": {
               "groups": {
                 "top": {
@@ -1915,7 +1909,6 @@
               ]
             },
             "id": "d0823085-c38d-47b5-adca-f2b5dfe44401",
-            "zIndex": 16,
             "data": {
               "type": "tm.Actor",
               "name": "Attacker ",
@@ -1923,23 +1916,9 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "providesAuthentication": false,
-              "threats": [
-                {
-                  "id": "5143f1a8-2800-47d3-a1a6-7742f4c28526",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": true,
-                  "number": 2,
-                  "score": ""
-                }
-              ]
+              "threats": []
             }
           }
         ]
@@ -1947,6 +1926,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
-    "threatTop": 12
+    "threatTop": 13
   }
 }
