@@ -631,7 +631,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Undiscovered weaknesses (VM artifacts, inconsistent service banners, unnatural traffic patterns) could allow an attacker to determine the system is a honeypot rather than a real production host.",
+                  "description": "An external attacker actively probing the honeypot after gaining initial access may notice inconsistencies such as VM artifacts, mismatched service banners, or unnaturally clean traffic patterns, allowing them to conclude they're interacting with a honeypot rather than a real production host; once this happens, the attacker can deliberately shape their behaviour to feed misleading data into the collection pipeline, undermining the integrity of the entire research dataset.",
                   "mitigation": "Harden honeypot to reduce detectable artifacts; monitor for reconnaissance behaviour indicating fingerprinting attempts",
                   "modelType": "STRIDE",
                   "new": false,
@@ -644,7 +644,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Attacker cripples Honeypot system after discovering they are in a honeypot, so they try to cripple the system so that parts of CTI are brought to a standstill",
+                  "description": "Once an attacker has fingerprinted the honeypot and realised they're being observed, they may flood or exhaust the system's resources purely to cause disruption rather than pursue further access, halting data collection for the duration of the outage and leaving gaps in the CTI dataset the research depends on.",
                   "mitigation": "Monitor honeypot availability and alert on unexpected service interruption, since the outage itself is a detection signal",
                   "modelType": "STRIDE",
                   "new": false,
@@ -656,8 +656,8 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 1,
-                "denialOfService": 3,
+                "informationDisclosure": 2,
+                "denialOfService": 4,
                 "elevationOfPrivilege": 0
               }
             }
