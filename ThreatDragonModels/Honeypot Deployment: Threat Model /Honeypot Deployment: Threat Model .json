@@ -21,7 +21,7 @@
         "cells": [
           {
             "position": {
-              "x": -270,
+              "x": -260,
               "y": 30
             },
             "size": {
@@ -213,7 +213,7 @@
           {
             "position": {
               "x": -310,
-              "y": 190
+              "y": 197
             },
             "size": {
               "width": 110,
@@ -334,7 +334,7 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "The organisation router's management SSH has no MFA, allowing credential-based compromise of routing configuration.",
+                  "description": "An external attacker who has scanned the network for exposed management services can target the Org Router's SSH interface, and if there is no MFA configured they may perform brute-force or credential-stuffing attacks to get themselves into an authenticated session; once inside, they can view or alter routing configuration, compromising the organisation's very first point of network control and gaining a foothold for further internal reconnaissance.",
                   "mitigation": "Enforce MFA on router management; use key-based auth over passwords",
                   "modelType": "STRIDE",
                   "new": false,
@@ -347,7 +347,7 @@
                   "status": "Open",
                   "severity": "Critical",
                   "type": "Elevation of privilege",
-                  "description": "Misconfigured firewall rules on the Org Router could allow attacker traffic broader access into the internal network than intended, undermining the first layer of perimeter defense.",
+                  "description": "An external attacker probing the network perimeter can send traffic that should be blocked by the Org Router's firewall but is instead permitted due to overly permissive rules, allowing them to reach further into the internal network than intended and bypassing the organisation's first layer of perimeter defense",
                   "mitigation": "Regularly audit firewall rulesets; apply default-deny with explicit allow rules only for required traffic",
                   "modelType": "STRIDE",
                   "new": false,
@@ -356,12 +356,12 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 3,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 3
+                "elevationOfPrivilege": 4
               }
             }
           },
@@ -1666,16 +1666,6 @@
             "target": {
               "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
               "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
             },
             "vertices": []
           },
