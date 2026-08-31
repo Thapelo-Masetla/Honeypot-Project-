@@ -1746,7 +1746,7 @@
               ],
               "trustBoundaryIds": [],
               "threatFrequency": {
-                "tampering": 6,
+                "tampering": 7,
                 "informationDisclosure": 5,
                 "denialOfService": 0
               }
@@ -1768,17 +1768,7 @@
                 "x": -110,
                 "y": 410
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
