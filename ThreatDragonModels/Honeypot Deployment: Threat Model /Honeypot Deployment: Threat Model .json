@@ -1530,182 +1530,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "DF Between L3 and L2",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "3ba940fb-cbbb-4934-b074-bed9e19e2b95",
-                  "title": "Unencrypted Data in Transit ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "If data flows between the two links is not encrypted, an attacker with visibility into the  link could read traffic contents in plaintext.",
-                  "mitigation": "Encrypt data in transit using strong encryption standards",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 31,
-                  "score": ""
-                },
-                {
-                  "id": "bea6d90d-f55d-4f75-83f9-b56bdaa51d53",
-                  "title": "No integrity Checks on data flow ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Without integrity verification on data in transit, traffic could be altered en route without detection",
-                  "mitigation": "Implement integrity verification such as hashing/signing",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 32,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [],
-              "threatFrequency": {
-                "tampering": 2,
-                "informationDisclosure": 1,
-                "denialOfService": 0
-              }
-            },
-            "labels": [
-              "DF Between L3 and L2"
-            ],
-            "id": "5efdaf0b-f6bd-48a8-90e8-55f2cc07719e",
-            "source": {
-              "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
-              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
-            },
-            "target": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "DF between Monitoring and L2 S",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "44ea86b7-d3e2-41e2-9453-241287c353fc",
-                  "title": "Unencrypted Data in Transit ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "If data flow is not  encrypted, an attacker with visibility into the  link could read traffic contents in plaintext and decide to start feeding the honeypot false telemetry ",
-                  "mitigation": "Encrypt data in transit using strong encryption standards",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 28,
-                  "score": ""
-                },
-                {
-                  "id": "55382158-4b1d-467a-8117-966968ee5c6d",
-                  "title": "No integrity Checks on Data Flow ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection",
-                  "mitigation": "Implement integrity verification such as hashing/signing on critical data flow ",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 29,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5",
-                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
-              ],
-              "threatFrequency": {
-                "tampering": 4,
-                "informationDisclosure": 4,
-                "denialOfService": 0
-              }
-            },
-            "labels": [
-              "DF between Monitoring and L2 S"
-            ],
-            "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
-            "source": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
-            },
-            "target": {
-              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-            },
-            "vertices": [
-              {
-                "x": 182,
-                "y": 280
-              },
-              {
-                "x": 182,
-                "y": 250
-              },
-              {
-                "x": 250,
-                "y": 227
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "DF between R and L3 S",
               "description": "",
               "outOfScope": false,
@@ -1764,6 +1588,182 @@
               "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
             },
             "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "DF Between L3 and L2",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "3ba940fb-cbbb-4934-b074-bed9e19e2b95",
+                  "title": "Unencrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "An attacker with visibility into the link between the L3 and L2 Switch, sitting right at the segmentation boundary, can intercept this unencrypted traffic and read its contents in plaintext, exposing data at the exact point meant to separate the Honeypot VLAN from the organisation's trusted zone",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": ""
+                },
+                {
+                  "id": "bea6d90d-f55d-4f75-83f9-b56bdaa51d53",
+                  "title": "No integrity Checks on data flow ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Lacking integrity verification, the data flow between the L3 and L2 Switch is vulnerable to an attacker altering traffic in transit at the segmentation boundary itself without detection, undermining confidence that traffic entering the trusted zone is legitimate and unmodified",
+                  "mitigation": "Implement integrity verification such as hashing/signing",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 32,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 3,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "DF Between L3 and L2"
+            ],
+            "id": "5efdaf0b-f6bd-48a8-90e8-55f2cc07719e",
+            "source": {
+              "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
+              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
+            },
+            "target": {
+              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "DF between Monitoring and L2 S",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "44ea86b7-d3e2-41e2-9453-241287c353fc",
+                  "title": "Unencrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Information disclosure",
+                  "description": "An attacker who has pivoted into the Monitoring VLAN and gained visibility into its link with the L2 Switch can intercept this unencrypted traffic and read its contents in plaintext, potentially exposing SIEM configuration and detection capability that would otherwise remain hidden from them",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": ""
+                },
+                {
+                  "id": "55382158-4b1d-467a-8117-966968ee5c6d",
+                  "title": "No integrity Checks on Data Flow ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Without integrity verification on the data flow between Monitoring and the L2 Switch, an attacker with access to this link can alter monitoring traffic in transit undetected, compromising the reliability of the data the research dataset depends on.",
+                  "mitigation": "Implement integrity verification such as hashing/signing on critical data flow ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "715f033e-ae63-49b2-a08c-d784660ba9d5",
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
+              ],
+              "threatFrequency": {
+                "tampering": 5,
+                "informationDisclosure": 5,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "DF between Monitoring and L2 S"
+            ],
+            "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
+            "source": {
+              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
+              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
+            },
+            "target": {
+              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
+            },
+            "vertices": [
+              {
+                "x": 182,
+                "y": 280
+              },
+              {
+                "x": 182,
+                "y": 250
+              },
+              {
+                "x": 250,
+                "y": 227
+              }
+            ]
           },
           {
             "position": {
