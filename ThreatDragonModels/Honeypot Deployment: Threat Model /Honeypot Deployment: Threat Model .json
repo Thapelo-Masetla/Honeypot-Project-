@@ -53,15 +53,6 @@
                 "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
                 "89e1261d-95cc-4dbe-b184-84ce9faa94a6"
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -1539,86 +1530,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "DF between R and L3 S",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "b54c9aa3-8d5b-4f78-b1f6-a3a594989816",
-                  "title": "Unencrypted Data in Transit ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "If data flow is not encrypted, an attacker with visibility into this  link could read traffic contents in plaintext.",
-                  "mitigation": "Encrypt data in transit using strong encryption standards",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 26,
-                  "score": ""
-                },
-                {
-                  "id": "eefc6291-9ca0-4314-8c8d-bf875e237de0",
-                  "title": "No Integrity Checks on Data Flows ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, even if the endpoints themselves remain uncompromised.",
-                  "mitigation": "Implement integrity verification hashing/signing on data flows.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 27,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [],
-              "threatFrequency": {
-                "tampering": 3,
-                "informationDisclosure": 3,
-                "denialOfService": 0
-              }
-            },
-            "labels": [
-              "DF between R and L3 S"
-            ],
-            "id": "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
-            "source": {
-              "cell": "38baa0b7-4143-4f64-acbe-1f809a3b614e",
-              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
-            },
-            "target": {
-              "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
-              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "DF Between L3 and L2",
               "description": "",
               "outOfScope": false,
@@ -1773,6 +1684,86 @@
                 "y": 227
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "DF between R and L3 S",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "b54c9aa3-8d5b-4f78-b1f6-a3a594989816",
+                  "title": "Unencrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "If data flow is not encrypted, an attacker with visibility into this  link could read traffic contents in plaintext, which exposes internal traffic content and topology details , which aids in further reconnaissance toward other systems in the internal network",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                },
+                {
+                  "id": "eefc6291-9ca0-4314-8c8d-bf875e237de0",
+                  "title": "No Integrity Checks on Data Flows ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Because the data flow between the Org Router and L3 Switch has no integrity verification, an attacker with access to this link can alter the traffic in transit without either endpoint being compromised and without the tampering being detected, undermining trust in the routing decisions made downstream",
+                  "mitigation": "Implement integrity verification hashing/signing on data flows.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 4,
+                "informationDisclosure": 4,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "DF between R and L3 S"
+            ],
+            "id": "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
+            "source": {
+              "cell": "38baa0b7-4143-4f64-acbe-1f809a3b614e",
+              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
+            },
+            "target": {
+              "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
+            },
+            "vertices": []
           },
           {
             "position": {
