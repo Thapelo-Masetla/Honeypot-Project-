@@ -673,7 +673,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Monitoring "
+                "text": "Monitoring VLAN "
               },
               "body": {
                 "stroke": "red",
@@ -769,7 +769,7 @@
             "id": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
             "data": {
               "type": "tm.Process",
-              "name": "Monitoring ",
+              "name": "Monitoring VLAN ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -792,11 +792,24 @@
                   "new": false,
                   "number": 10,
                   "score": ""
+                },
+                {
+                  "id": "9cb73767-d9e2-4f69-a22d-ecb8fe7fec63",
+                  "title": "Honeypot Log tampering ",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Tampering",
+                  "description": "If an attacker can successfully pivot into the Monitoring VLAN by crossing the boundary, they can gain access to the Honeypot Logs data store and alter or delete stored TTP data, erasing evidence of their own activity and directly invalidating the evidentiary base the research's findings are built on",
+                  "mitigation": "Write-once/append-only log storage; separate log storage host from analysis host; regular integrity hashing of log files",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 33,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
@@ -1245,7 +1258,7 @@
                   "severity": "Critical",
                   "type": "Tampering",
                   "description": "Once an attacker has successfully pivoted into the Monitoring VLAN by crossing the boundary, they can gain access to the Honeypot Logs data store and alter or delete stored TTP data, erasing evidence of their own activity and directly invalidating the evidentiary base the research's findings are built on",
-                  "mitigation": "Write-once/append-only log storage; separate log storage host from analysis host; regular integrity hashing of log files",
+                  "mitigation": "Append-only log storage; separate log storage host from analysis host; regular integrity hashing of log files",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 12,
@@ -1253,7 +1266,7 @@
                 }
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
@@ -2126,6 +2139,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
-    "threatTop": 32
+    "threatTop": 33
   }
 }
