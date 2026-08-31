@@ -1719,7 +1719,7 @@
               "threats": [
                 {
                   "id": "b54c9aa3-8d5b-4f78-b1f6-a3a594989816",
-                  "title": "Unecrypted Data in Transit ",
+                  "title": "Unencrypted Data in Transit ",
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
@@ -1747,7 +1747,7 @@
               "trustBoundaryIds": [],
               "threatFrequency": {
                 "tampering": 3,
-                "informationDisclosure": 2,
+                "informationDisclosure": 3,
                 "denialOfService": 0
               }
             },
