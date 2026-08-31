@@ -487,9 +487,9 @@
                   "id": "61083edf-d581-4f7d-a59d-4645452b5387",
                   "title": "No MFA on L2 Switch Management SSH",
                   "status": "Open",
-                  "severity": "High",
+                  "severity": "Critical",
                   "type": "Spoofing",
-                  "description": "The L2 switch's management SSH interface lacks MFA, risking unauthorized configuration changes if credentials are compromised.",
+                  "description": "An attacker who has already obtained credentials, either through reconnaissance or a prior compromise, can authenticate to the L2 Switch's SSH management interface without needing a second factor, then modify switch configuration such as VLAN assignments or port security, potentially opening a path for VLAN hopping between the isolated Honeypot zone and the organisation's trusted network",
                   "mitigation": "Enforce MFA on switch management access; restrict to IT or VLAN only",
                   "modelType": "STRIDE",
                   "new": false,
@@ -498,7 +498,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
