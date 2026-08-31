@@ -50,7 +50,6 @@
               "containedElements": [
                 "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
                 "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-                "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
                 "89e1261d-95cc-4dbe-b184-84ce9faa94a6"
               ]
             }
@@ -85,7 +84,6 @@
               ],
               "containedElements": [
                 "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-                "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
                 "89e1261d-95cc-4dbe-b184-84ce9faa94a6"
               ]
             }
@@ -664,12 +662,12 @@
           },
           {
             "position": {
-              "x": 272,
-              "y": 197
+              "x": 342,
+              "y": 162
             },
             "size": {
-              "width": 60,
-              "height": 60
+              "width": 110,
+              "height": 70
             },
             "attrs": {
               "text": {
@@ -1128,152 +1126,6 @@
             }
           },
           {
-            "position": {
-              "x": 390,
-              "y": 160
-            },
-            "size": {
-              "width": 120,
-              "height": 60
-            },
-            "attrs": {
-              "text": {
-                "text": "Honeypot Logs"
-              },
-              "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "strokeDasharray": null
-              },
-              "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "store",
-            "zIndex": 10,
-            "ports": {
-              "groups": {
-                "top": {
-                  "position": "top",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "right": {
-                  "position": "right",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "bottom": {
-                  "position": "bottom",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                },
-                "left": {
-                  "position": "left",
-                  "attrs": {
-                    "circle": {
-                      "r": 4,
-                      "magnet": true,
-                      "stroke": "#5F95FF",
-                      "strokeWidth": 1,
-                      "fill": "#fff",
-                      "style": {
-                        "visibility": "hidden"
-                      }
-                    }
-                  }
-                }
-              },
-              "items": [
-                {
-                  "group": "top",
-                  "id": "a09e4dd7-2e16-4ca2-8c75-46c7efa54344"
-                },
-                {
-                  "group": "right",
-                  "id": "21590e3a-0dd1-4ed6-9de1-f0ee5b27c7dd"
-                },
-                {
-                  "group": "bottom",
-                  "id": "17e74784-cae1-49d8-ac0c-bf8f2786eea3"
-                },
-                {
-                  "group": "left",
-                  "id": "09f300c9-c58a-441e-8511-f4cf8fe40375"
-                }
-              ]
-            },
-            "id": "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
-            "data": {
-              "type": "tm.Store",
-              "name": "Honeypot Logs",
-              "description": "All attacker TTPs gathered from the honeypot using SPAN Mirroring",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isALog": false,
-              "isEncrypted": false,
-              "isSigned": false,
-              "storesCredentials": false,
-              "storesInventory": false,
-              "threats": [
-                {
-                  "id": "00e81cd7-2473-4946-a0a3-7f7760aed190",
-                  "title": "Honeypot Log tampering ",
-                  "status": "Open",
-                  "severity": "Critical",
-                  "type": "Tampering",
-                  "description": "Once an attacker has successfully pivoted into the Monitoring VLAN by crossing the boundary, they can gain access to the Honeypot Logs data store and alter or delete stored TTP data, erasing evidence of their own activity and directly invalidating the evidentiary base the research's findings are built on",
-                  "mitigation": "Append-only log storage; separate log storage host from analysis host; regular integrity hashing of log files",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 12,
-                  "score": ""
-                }
-              ],
-              "threatFrequency": {
-                "tampering": 3,
-                "repudiation": 0,
-                "informationDisclosure": 0,
-                "denialOfService": 0
-              }
-            }
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1328,53 +1180,6 @@
                 "y": 282
               }
             ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "d8ab9d00-a60f-43b9-9861-6393fe7bdd38",
-            "source": {
-              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
-            },
-            "target": {
-              "cell": "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
-              "port": "09f300c9-c58a-441e-8511-f4cf8fe40375"
-            },
-            "vertices": []
           },
           {
             "shape": "flow",
