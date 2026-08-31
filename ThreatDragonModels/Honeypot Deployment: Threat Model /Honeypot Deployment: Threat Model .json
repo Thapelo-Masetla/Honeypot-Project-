@@ -44,8 +44,8 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "650f1bbf-2d3b-48f4-885a-deba6acfe8b4",
-                "fbf82c46-5682-49ae-856b-c80e570ba84b"
+                "356eabd0-6b61-4bd9-b533-e9510cb4e730",
+                "017beb04-7ceb-4c5d-ba0b-d77564ac4f24"
               ],
               "containedElements": [
                 "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
@@ -80,8 +80,8 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
-                "650f1bbf-2d3b-48f4-885a-deba6acfe8b4",
-                "fbf82c46-5682-49ae-856b-c80e570ba84b"
+                "356eabd0-6b61-4bd9-b533-e9510cb4e730",
+                "017beb04-7ceb-4c5d-ba0b-d77564ac4f24"
               ],
               "containedElements": [
                 "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
@@ -1441,56 +1441,6 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5",
-                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
-              ]
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "650f1bbf-2d3b-48f4-885a-deba6acfe8b4",
-            "source": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
-            },
-            "target": {
-              "cell": "89e1261d-95cc-4dbe-b184-84ce9faa94a6",
-              "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
               "trustBoundaryIds": []
             },
             "labels": [
@@ -1585,56 +1535,6 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5",
-                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
-              ]
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "fbf82c46-5682-49ae-856b-c80e570ba84b",
-            "source": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
-            },
-            "target": {
-              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-              "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
               "trustBoundaryIds": []
             },
             "labels": [
@@ -1684,35 +1584,38 @@
               "protocol": "",
               "threats": [
                 {
-                  "id": "1aac1739-6880-4bbd-bd9e-93e913a9bdc5",
-                  "title": "Unecrypted Data in Transit ",
+                  "id": "44ea86b7-d3e2-41e2-9453-241287c353fc",
+                  "title": "Unencrypted Data in Transit ",
                   "status": "Open",
                   "severity": "High",
                   "type": "Information disclosure",
-                  "description": "If data flows across the network are not encrypted, an attacker with visibility into any link could read traffic contents in plaintext.",
-                  "mitigation": "Encrypt data in transit using strong encryption standards across internal links where feasible.",
+                  "description": "If data flow is not  encrypted, an attacker with visibility into the  link could read traffic contents in plaintext and decide to start feeding the honeypot false telemetry ",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 21,
+                  "number": 28,
                   "score": ""
                 },
                 {
-                  "id": "75dccfa5-59d9-4974-8ef3-9febd276c27f",
-                  "title": "No Integrity Checks on Data Flows ",
+                  "id": "55382158-4b1d-467a-8117-966968ee5c6d",
+                  "title": "No integrity Checks on Data Flow ",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Tampering",
-                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, even if the endpoints themselves remain uncompromised.",
-                  "mitigation": "Implement integrity verification hashing or signing on critical data flows",
+                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, ",
+                  "mitigation": "Implement integrity verification such as hashing/signing on critical data flow ",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 22,
+                  "number": 29,
                   "score": ""
                 }
               ],
-              "trustBoundaryIds": [],
+              "trustBoundaryIds": [
+                "715f033e-ae63-49b2-a08c-d784660ba9d5",
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
+              ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 2,
                 "informationDisclosure": 1,
                 "denialOfService": 0
               }
@@ -1720,7 +1623,87 @@
             "labels": [
               "Data Flow"
             ],
-            "id": "8426d8a1-1ec5-42cc-b21d-2fa1aed91b78",
+            "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
+            "source": {
+              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
+              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
+            },
+            "target": {
+              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "b54c9aa3-8d5b-4f78-b1f6-a3a594989816",
+                  "title": "Unecrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "If data flow is not encrypted, an attacker with visibility into this  link could read traffic contents in plaintext.",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                },
+                {
+                  "id": "eefc6291-9ca0-4314-8c8d-bf875e237de0",
+                  "title": "No Integrity Checks on Data Flows ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, even if the endpoints themselves remain uncompromised.",
+                  "mitigation": "Implement integrity verification hashing/signing on data flows,",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
             "source": {
               "cell": "38baa0b7-4143-4f64-acbe-1f809a3b614e",
               "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
@@ -1729,7 +1712,17 @@
               "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
               "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
             },
-            "vertices": []
+            "vertices": [],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -1989,12 +1982,344 @@
               "providesAuthentication": false,
               "threats": []
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 17,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "d82cfb24-194a-4a34-a097-fb93741130c1",
+                  "title": "Unencrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Information disclosure",
+                  "description": "If data flowing from the switch to the production VLAN is not encrypted, an attacker with visibility into the link could read sensitive company data traffic in plaintext.",
+                  "mitigation": "Encrypt data in transit using strong encryption standards.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 24,
+                  "score": ""
+                },
+                {
+                  "id": "7c42bb40-d58b-46c0-a580-977f9fea72e8",
+                  "title": "No integrity Checks on Data flow ",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Without integrity verification on data in transit, traffic could be altered en route without detection",
+                  "mitigation": "Implement integrity verification such as hashing/signing",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "715f033e-ae63-49b2-a08c-d784660ba9d5",
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "Data Flow"
+            ],
+            "id": "017beb04-7ceb-4c5d-ba0b-d77564ac4f24",
+            "source": {
+              "cell": "89e1261d-95cc-4dbe-b184-84ce9faa94a6",
+              "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
+            },
+            "target": {
+              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
+              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
+            },
+            "vertices": [
+              {
+                "x": 120,
+                "y": 350
+              },
+              {
+                "x": 120,
+                "y": 370
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           }
         ]
       }
     ],
     "diagramTop": 2,
     "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
-    "threatTop": 23
+    "threatTop": 30
   }
 }
