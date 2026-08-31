@@ -21,12 +21,12 @@
         "cells": [
           {
             "position": {
-              "x": -180,
-              "y": 112
+              "x": -270,
+              "y": 30
             },
             "size": {
-              "width": 950,
-              "height": 340
+              "width": 1090,
+              "height": 470
             },
             "attrs": {
               "label": {
@@ -44,11 +44,14 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
+                "05ee6ed2-6952-43ba-8bba-5498a4ad849f",
+                "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
                 "356eabd0-6b61-4bd9-b533-e9510cb4e730",
                 "017beb04-7ceb-4c5d-ba0b-d77564ac4f24"
               ],
               "containedElements": [
                 "a0c4bd4a-d228-48a6-8b47-0720baa87f41",
+                "38baa0b7-4143-4f64-acbe-1f809a3b614e",
                 "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
                 "fc8d8e6c-15a2-44f9-a224-854a345ed2dc",
                 "89e1261d-95cc-4dbe-b184-84ce9faa94a6"
@@ -57,12 +60,12 @@
           },
           {
             "position": {
-              "x": -30,
-              "y": 175
+              "x": -45,
+              "y": 122
             },
             "size": {
-              "width": 540,
-              "height": 160
+              "width": 590,
+              "height": 210
             },
             "attrs": {
               "label": {
@@ -367,8 +370,8 @@
           },
           {
             "position": {
-              "x": 122,
-              "y": 400
+              "x": 180,
+              "y": 435
             },
             "size": {
               "width": 80,
@@ -509,8 +512,8 @@
           },
           {
             "position": {
-              "x": 332,
-              "y": 480
+              "x": 390,
+              "y": 550
             },
             "size": {
               "width": 100,
@@ -664,8 +667,8 @@
           },
           {
             "position": {
-              "x": 192,
-              "y": 252
+              "x": 272,
+              "y": 197
             },
             "size": {
               "width": 60,
@@ -806,8 +809,8 @@
           },
           {
             "position": {
-              "x": 212,
-              "y": 510
+              "x": 190,
+              "y": 580
             },
             "size": {
               "width": 100,
@@ -948,8 +951,8 @@
           },
           {
             "position": {
-              "x": -30,
-              "y": 395
+              "x": -90,
+              "y": 430
             },
             "size": {
               "width": 80,
@@ -1116,8 +1119,8 @@
           },
           {
             "position": {
-              "x": 312,
-              "y": 192
+              "x": 390,
+              "y": 160
             },
             "size": {
               "width": 120,
@@ -1291,7 +1294,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "715f033e-ae63-49b2-a08c-d784660ba9d5"
+              ]
             },
             "labels": [
               "Data Flow"
@@ -1461,7 +1466,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1477,21 +1483,53 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "DF Between L3 and L2",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "3ba940fb-cbbb-4934-b074-bed9e19e2b95",
+                  "title": "Unencrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "If data flows between the two links is not encrypted, an attacker with visibility into the  link could read traffic contents in plaintext.",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": ""
+                },
+                {
+                  "id": "bea6d90d-f55d-4f75-83f9-b56bdaa51d53",
+                  "title": "No integrity Checks on data flow ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Without integrity verification on data in transit, traffic could be altered en route without detection,",
+                  "mitigation": "Implement integrity verification such as hashing/signing",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 32,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
-              "Data Flow"
+              "DF Between L3 and L2"
             ],
             "id": "5efdaf0b-f6bd-48a8-90e8-55f2cc07719e",
             "source": {
@@ -1503,174 +1541,6 @@
               "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "b54c9aa3-8d5b-4f78-b1f6-a3a594989816",
-                  "title": "Unecrypted Data in Transit ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "If data flow is not encrypted, an attacker with visibility into this  link could read traffic contents in plaintext.",
-                  "mitigation": "Encrypt data in transit using strong encryption standards",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 26,
-                  "score": ""
-                },
-                {
-                  "id": "eefc6291-9ca0-4314-8c8d-bf875e237de0",
-                  "title": "No Integrity Checks on Data Flows ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, even if the endpoints themselves remain uncompromised.",
-                  "mitigation": "Implement integrity verification hashing/signing on data flows,",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 27,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [],
-              "threatFrequency": {
-                "tampering": 2,
-                "informationDisclosure": 2,
-                "denialOfService": 0
-              }
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
-            "source": {
-              "cell": "38baa0b7-4143-4f64-acbe-1f809a3b614e",
-              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
-            },
-            "target": {
-              "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
-              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "44ea86b7-d3e2-41e2-9453-241287c353fc",
-                  "title": "Unencrypted Data in Transit ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Information disclosure",
-                  "description": "If data flow is not  encrypted, an attacker with visibility into the  link could read traffic contents in plaintext and decide to start feeding the honeypot false telemetry ",
-                  "mitigation": "Encrypt data in transit using strong encryption standards",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 28,
-                  "score": ""
-                },
-                {
-                  "id": "55382158-4b1d-467a-8117-966968ee5c6d",
-                  "title": "No integrity Checks on Data Flow ",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, ",
-                  "mitigation": "Implement integrity verification such as hashing/signing on critical data flow ",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 29,
-                  "score": ""
-                }
-              ],
-              "trustBoundaryIds": [
-                "715f033e-ae63-49b2-a08c-d784660ba9d5",
-                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
-              ],
-              "threatFrequency": {
-                "tampering": 3,
-                "informationDisclosure": 3,
-                "denialOfService": 0
-              }
-            },
-            "labels": [
-              "Data Flow"
-            ],
-            "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
-            "source": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
-            },
-            "target": {
-              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
-              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
-            },
-            "vertices": [
-              {
-                "x": 162,
-                "y": 360
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -1725,9 +1595,187 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "DF between R and L3 S",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "b54c9aa3-8d5b-4f78-b1f6-a3a594989816",
+                  "title": "Unecrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "If data flow is not encrypted, an attacker with visibility into this  link could read traffic contents in plaintext.",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                },
+                {
+                  "id": "eefc6291-9ca0-4314-8c8d-bf875e237de0",
+                  "title": "No Integrity Checks on Data Flows ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, even if the endpoints themselves remain uncompromised.",
+                  "mitigation": "Implement integrity verification hashing/signing on data flows,",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 27,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "715f033e-ae63-49b2-a08c-d784660ba9d5"
+              ],
+              "threatFrequency": {
+                "tampering": 2,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "DF between R and L3 S"
+            ],
+            "id": "fe77d1ed-2ce1-4f77-8a06-d674eb8b0075",
+            "source": {
+              "cell": "38baa0b7-4143-4f64-acbe-1f809a3b614e",
+              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
+            },
+            "target": {
+              "cell": "5e5e068a-1519-44bf-8c9b-f28c409f5dc0",
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "DF between Monitoring and L2 S",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "44ea86b7-d3e2-41e2-9453-241287c353fc",
+                  "title": "Unencrypted Data in Transit ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "If data flow is not  encrypted, an attacker with visibility into the  link could read traffic contents in plaintext and decide to start feeding the honeypot false telemetry ",
+                  "mitigation": "Encrypt data in transit using strong encryption standards",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 28,
+                  "score": ""
+                },
+                {
+                  "id": "55382158-4b1d-467a-8117-966968ee5c6d",
+                  "title": "No integrity Checks on Data Flow ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Without integrity verification such as checksums/signing on data in transit, traffic could be altered en route without detection, ",
+                  "mitigation": "Implement integrity verification such as hashing/signing on critical data flow ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "715f033e-ae63-49b2-a08c-d784660ba9d5",
+                "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
+              ],
+              "threatFrequency": {
+                "tampering": 3,
+                "informationDisclosure": 4,
+                "denialOfService": 0
+              }
+            },
+            "labels": [
+              "DF between Monitoring and L2 S"
+            ],
+            "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
+            "source": {
+              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
+              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
+            },
+            "target": {
+              "cell": "a7ea453a-ce80-4a51-8fe6-dee3a91b06f1",
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
+            },
+            "vertices": [
+              {
+                "x": 182,
+                "y": 280
+              },
+              {
+                "x": 182,
+                "y": 250
+              },
+              {
+                "x": 250,
+                "y": 227
+              }
+            ]
+          },
+          {
             "position": {
-              "x": 20,
-              "y": 220
+              "x": 0,
+              "y": 160
             },
             "size": {
               "width": 70,
@@ -2004,7 +2052,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "DF between L2 Switch and Production",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2032,7 +2080,7 @@
                   "id": "7c42bb40-d58b-46c0-a580-977f9fea72e8",
                   "title": "No integrity Checks on Data flow ",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Tampering",
                   "description": "Without integrity verification on data in transit, production traffic could be altered en route without detection",
                   "mitigation": "Implement integrity verification such as hashing/signing",
@@ -2047,13 +2095,13 @@
                 "a0c4bd4a-d228-48a6-8b47-0720baa87f41"
               ],
               "threatFrequency": {
-                "tampering": 2,
+                "tampering": 3,
                 "informationDisclosure": 1,
                 "denialOfService": 0
               }
             },
             "labels": [
-              "Data Flow"
+              "DF between L2 Switch and Production"
             ],
             "id": "017beb04-7ceb-4c5d-ba0b-d77564ac4f24",
             "source": {
@@ -2067,11 +2115,11 @@
             "vertices": [
               {
                 "x": 120,
-                "y": 350
+                "y": 370
               },
               {
                 "x": 120,
-                "y": 370
+                "y": 390
               }
             ]
           }
@@ -2080,6 +2128,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
-    "threatTop": 30
+    "threatTop": 32
   }
 }
