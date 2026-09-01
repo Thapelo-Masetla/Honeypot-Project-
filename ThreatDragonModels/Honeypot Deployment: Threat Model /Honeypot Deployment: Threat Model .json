@@ -351,10 +351,36 @@
                   "new": false,
                   "number": 13,
                   "score": ""
+                },
+                {
+                  "id": "4887a8d5-f6d2-4b6d-937c-0b8d1a79071d",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 35,
+                  "score": ""
+                },
+                {
+                  "id": "55db6aa9-3751-4398-bc01-29b96b82c990",
+                  "title": "Weak/Defualt Credentials ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "If the device still has defualt or weak management credentials , an attacker could gain unauthorised access ,once in, they could view or alter routing and firewall configurations ",
+                  "mitigation": "Change all default credentials before deployment. Enforce strong, unique passwords per device, and combine this with MFA ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": "8"
                 }
               ],
               "threatFrequency": {
-                "spoofing": 3,
+                "spoofing": 5,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -493,10 +519,23 @@
                   "new": false,
                   "number": 5,
                   "score": ""
+                },
+                {
+                  "id": "54966a19-1b2a-4ad0-b725-4e44819e8df4",
+                  "title": "Weak or Default Credentials ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "If the L2 Switch still has default or easily guessed management credentials, an attacker could gain unauthorised access into the network.Once in, they could alter switch configuration such as VLAN assignments or port security, potentially opening a path for VLAN hopping between the Honeypot zone and the organisation's trusted network.",
+                  "mitigation": "Change all default credentials on the L2 Switch before deployment. Enforce a strong, unique password, and combine this with MFA",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 38,
+                  "score": "8"
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 3,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -648,6 +687,19 @@
                   "new": false,
                   "number": 20,
                   "score": ""
+                },
+                {
+                  "id": "737b9f93-7789-4e4b-a56c-522acb24fdaa",
+                  "title": "Unpatched honeypot service exploited for full compromise/privilege escalation ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "An attacker who identifies an unpatched or outdated service running on the honeypot can exploit a known vulnerability to gain remote code execution, escalating from initial access to full system compromise and potentially a higher level of control than the exposed service should allow",
+                  "mitigation": "Research and fully understand each service running on the honeypot, including how it could be exploited. Assess whether a successful exploit would give the attacker a foothold into more critical parts of the network, such as Production or Monitoring. If it would, patch it before the honeypot goes live, If it wouldn't, it can be left as-is, since it's meant to be exploitable for CTI collection.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -656,7 +708,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 2,
                 "denialOfService": 4,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
               }
             }
           },
@@ -1113,10 +1165,23 @@
                   "new": false,
                   "number": 8,
                   "score": ""
+                },
+                {
+                  "id": "78b8a459-ace1-4167-9bec-f1f7c03b350f",
+                  "title": "Weak or Default Credentials ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "If the Layer Switch, still has default or easily guessed management credentials, an attacker could gain unauthorised, once in, they could view or alter routing and ACL configuration.",
+                  "mitigation": "Change all default credentials on the device before deployment. Enforce strong, unique passwords on the device, and combine this with MFA ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 37,
+                  "score": "8"
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 3,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 3,
@@ -1944,6 +2009,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Arielle-Milan Tchalieu Ngomsi, Khanyisa Xaba , Roxanne Freda Breedt, Marang Thato Seyama",
-    "threatTop": 33
+    "threatTop": 38
   }
 }
