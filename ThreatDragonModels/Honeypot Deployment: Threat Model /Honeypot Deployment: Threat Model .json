@@ -111,6 +111,7 @@
               "isTrustBoundary": true,
               "hasOpenThreats": false,
               "crossingFlows": [
+                "e4f0ea2d-759d-4026-82d6-a28fc78b8504",
                 "b06f08cb-0bcb-4c2f-aeed-b0c1570f2a1c"
               ],
               "containedElements": [
@@ -1547,7 +1548,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "SPAN Mirrored Traffic- can access Honeypot ",
+              "name": "SPAN Mirrored Traffic",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1596,7 +1597,7 @@
               }
             },
             "labels": [
-              "SPAN Mirrored Traffic- can access Honeypot "
+              "SPAN Mirrored Traffic"
             ],
             "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
             "source": {
@@ -1634,7 +1635,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Cant access honeypot and Production (ACL deny)",
+              "name": "Data Flow ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1645,10 +1646,12 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "869258d5-ba84-4e7a-b72d-7b57c9e92e8a"
+              ]
             },
             "labels": [
-              "Cant access honeypot and Production (ACL deny)"
+              "Data Flow "
             ],
             "id": "e4f0ea2d-759d-4026-82d6-a28fc78b8504",
             "source": {
@@ -1656,144 +1659,19 @@
               "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
             },
             "target": {
-              "x": 1680,
-              "y": 980
+              "cell": "2e84ba98-65fd-4224-a3b8-91c0584c50db",
+              "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
             },
             "vertices": [
               {
-                "x": 890,
+                "x": 830,
                 "y": 1100
               },
               {
-                "x": 1340,
-                "y": 1170
+                "x": 1200,
+                "y": 1180
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
@@ -2165,7 +2043,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "ACL cant access Production or Monitoring (deny)",
+              "name": "Data Flow ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2181,7 +2059,7 @@
               ]
             },
             "labels": [
-              "ACL cant access Production or Monitoring (deny)"
+              "Data Flow "
             ],
             "id": "b06f08cb-0bcb-4c2f-aeed-b0c1570f2a1c",
             "source": {
