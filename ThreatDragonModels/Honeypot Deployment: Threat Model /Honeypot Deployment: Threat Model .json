@@ -102,8 +102,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "869258d5-ba84-4e7a-b72d-7b57c9e92e8a",
             "zIndex": -1,
+            "id": "869258d5-ba84-4e7a-b72d-7b57c9e92e8a",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Honeypot VLAN",
@@ -115,6 +115,39 @@
               ],
               "containedElements": [
                 "61dd091f-a1a7-4d18-8088-63185fc89aa5"
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": -1485,
+              "y": 171.99999999999972
+            },
+            "size": {
+              "width": 800,
+              "height": 310
+            },
+            "attrs": {
+              "label": {
+                "text": "Attacker LAN"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "id": "93e55d55-32ef-4521-b9a4-c78e4138cfd3",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Attacker LAN",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [
+                "05ee6ed2-6952-43ba-8bba-5498a4ad849f"
+              ],
+              "containedElements": [
+                "fb2f52ca-a661-48f1-ab17-2d953c5eeb2b",
+                "d0823085-c38d-47b5-adca-f2b5dfe44401"
               ]
             }
           },
@@ -1254,7 +1287,9 @@
               "isPublicNetwork": false,
               "protocol": "",
               "threats": [],
-              "trustBoundaryIds": []
+              "trustBoundaryIds": [
+                "93e55d55-32ef-4521-b9a4-c78e4138cfd3"
+              ]
             },
             "labels": [
               "Data Flow"
@@ -1621,6 +1656,7 @@
               "Data Flow"
             ],
             "id": "2eec5d26-2a3c-471e-b1aa-1524f0a66ed3",
+            "parent": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
             "source": {
               "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
               "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
@@ -1629,8 +1665,7 @@
               "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
               "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
             },
-            "vertices": [],
-            "parent": "334b05d3-1b5c-4f1c-babf-7b03e19628f7"
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1959,7 +1994,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Protected from attacker and honeypot via ACL config",
+              "name": "Protected from attacker and honeypot via ACL config (ACL deny)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2007,7 +2042,7 @@
               }
             },
             "labels": [
-              "Protected from attacker and honeypot via ACL config"
+              "Protected from attacker and honeypot via ACL config (ACL deny)"
             ],
             "id": "017beb04-7ceb-4c5d-ba0b-d77564ac4f24",
             "source": {
@@ -2020,34 +2055,14 @@
             },
             "vertices": [
               {
+                "x": 410,
+                "y": 530
+              },
+              {
                 "x": 150,
                 "y": 280
               }
             ]
-          },
-          {
-            "position": {
-              "x": -1077.5,
-              "y": 142
-            },
-            "size": {
-              "width": 190,
-              "height": 110
-            },
-            "attrs": {
-              "text": {
-                "text": "Attacker LAN"
-              }
-            },
-            "visible": true,
-            "shape": "td-text-block",
-            "id": "2031d061-4c35-425e-b3d8-dfb27fd3f312",
-            "zIndex": 18,
-            "data": {
-              "type": "tm.Text",
-              "name": "Attacker LAN",
-              "hasOpenThreats": false
-            }
           },
           {
             "shape": "flow",
