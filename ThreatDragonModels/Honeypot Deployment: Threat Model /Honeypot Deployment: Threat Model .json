@@ -21,8 +21,8 @@
         "cells": [
           {
             "position": {
-              "x": -459.9999999999993,
-              "y": -130
+              "x": -430,
+              "y": -110
             },
             "size": {
               "width": 2430,
@@ -88,8 +88,8 @@
           },
           {
             "position": {
-              "x": 1060,
-              "y": 830.0000000000041
+              "x": 1130,
+              "y": 870
             },
             "size": {
               "width": 800,
@@ -114,7 +114,8 @@
                 "b06f08cb-0bcb-4c2f-aeed-b0c1570f2a1c"
               ],
               "containedElements": [
-                "61dd091f-a1a7-4d18-8088-63185fc89aa5"
+                "61dd091f-a1a7-4d18-8088-63185fc89aa5",
+                "2e84ba98-65fd-4224-a3b8-91c0584c50db"
               ]
             }
           },
@@ -134,8 +135,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "93e55d55-32ef-4521-b9a4-c78e4138cfd3",
             "zIndex": -1,
+            "id": "93e55d55-32ef-4521-b9a4-c78e4138cfd3",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Attacker LAN",
@@ -455,7 +456,7 @@
           {
             "position": {
               "x": 675,
-              "y": 905
+              "y": 920
             },
             "size": {
               "width": 190,
@@ -606,14 +607,12 @@
                 "elevationOfPrivilege": 0
               }
             },
-            "children": [
-              "2eec5d26-2a3c-471e-b1aa-1524f0a66ed3"
-            ]
+            "children": []
           },
           {
             "position": {
-              "x": 1580,
-              "y": 890
+              "x": 1310,
+              "y": 905
             },
             "size": {
               "width": 250,
@@ -780,8 +779,8 @@
           },
           {
             "position": {
-              "x": 400,
-              "y": 81.99999999999994
+              "x": 460,
+              "y": -40
             },
             "size": {
               "width": 330,
@@ -935,8 +934,8 @@
           },
           {
             "position": {
-              "x": 1050,
-              "y": 910
+              "x": 1620,
+              "y": 890
             },
             "size": {
               "width": 310,
@@ -1439,10 +1438,6 @@
               {
                 "x": 150,
                 "y": 920
-              },
-              {
-                "x": 220,
-                "y": 930
               }
             ]
           },
@@ -1552,7 +1547,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "SPAN Mirrored Traffic",
+              "name": "SPAN Mirrored Traffic- can access Honeypot ",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1601,7 +1596,7 @@
               }
             },
             "labels": [
-              "SPAN Mirrored Traffic"
+              "SPAN Mirrored Traffic- can access Honeypot "
             ],
             "id": "356eabd0-6b61-4bd9-b533-e9510cb4e730",
             "source": {
@@ -1614,8 +1609,8 @@
             },
             "vertices": [
               {
-                "x": 675,
-                "y": 330
+                "x": 730,
+                "y": 280
               }
             ]
           },
@@ -1639,7 +1634,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Cant access honeypot and Production (ACL deny)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1653,55 +1648,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
-            ],
-            "id": "2eec5d26-2a3c-471e-b1aa-1524f0a66ed3",
-            "parent": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-            "source": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
-            },
-            "target": {
-              "cell": "334b05d3-1b5c-4f1c-babf-7b03e19628f7",
-              "port": "15af6dee-d70f-4f4a-975c-61b2dcc12e11"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
-            },
-            "labels": [
-              "Data Flow"
+              "Cant access honeypot and Production (ACL deny)"
             ],
             "id": "e4f0ea2d-759d-4026-82d6-a28fc78b8504",
             "source": {
@@ -1709,10 +1656,144 @@
               "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
             },
             "target": {
-              "cell": "2e84ba98-65fd-4224-a3b8-91c0584c50db",
-              "port": "7a840626-1ebc-4bc2-a008-c187bffde619"
+              "x": 1680,
+              "y": 980
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 890,
+                "y": 1100
+              },
+              {
+                "x": 1340,
+                "y": 1170
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -2084,7 +2165,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "ACL cant access Production or Monitoring (deny)",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2100,7 +2181,7 @@
               ]
             },
             "labels": [
-              "Data Flow"
+              "ACL cant access Production or Monitoring (deny)"
             ],
             "id": "b06f08cb-0bcb-4c2f-aeed-b0c1570f2a1c",
             "source": {
@@ -2109,12 +2190,12 @@
             },
             "target": {
               "cell": "61dd091f-a1a7-4d18-8088-63185fc89aa5",
-              "port": "5617d1a1-6ceb-4d41-85ad-c298d17110ce"
+              "port": "a8c3a451-b47b-4f5b-8a41-bb49239bb647"
             },
             "vertices": [
               {
-                "x": 1140,
-                "y": 340
+                "x": 1120,
+                "y": 975
               }
             ]
           }
